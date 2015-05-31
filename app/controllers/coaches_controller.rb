@@ -1,4 +1,14 @@
 class CoachesController < ApplicationController
+
+before_action :ensure_current_user_is_coach, :only =>[:update, :destroy, :edit, :create, :new]
+
+def :ensure_current_user_is_coach
+  @coaches = Coach.all
+  if @favorite.bride_id #what is the condition? object belongs to a user
+    redirect_to root_url, :alert =>"Only coaches can access the coaches section."
+  end
+end
+
   def index
     @coaches = Coach.all
   end

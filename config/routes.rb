@@ -50,22 +50,6 @@ Rails.application.routes.draw do
   get "/delete_comment/:id", :controller => "comments", :action => "destroy"
   #------------------------------
 
-  # Routes for the Favorite resource:
-  # CREATE
-  get "/favorites/new", :controller => "favorites", :action => "new"
-  post "/create_favorite", :controller => "favorites", :action => "create"
-
-  # READ
-  get "/favorites", :controller => "favorites", :action => "index"
-  get "/favorites/:id", :controller => "favorites", :action => "show"
-
-  # UPDATE
-  get "/favorites/:id/edit", :controller => "favorites", :action => "edit"
-  post "/update_favorite/:id", :controller => "favorites", :action => "update"
-
-  # DELETE
-  get "/delete_favorite/:id", :controller => "favorites", :action => "destroy"
-  #------------------------------
 
   devise_for :brides
   # The priority is based upon order of creation: first created -> highest priority.
@@ -73,7 +57,7 @@ Rails.application.routes.draw do
 
   # You can have the root of your site routed with "root"
 
-  root 'welcome#index'
+  root "welcome#index"
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
