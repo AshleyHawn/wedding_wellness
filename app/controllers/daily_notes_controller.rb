@@ -5,7 +5,7 @@ before_action :ensure_current_user_is_coach, :only =>[:update, :destroy, :edit, 
 def :ensure_current_user_is_coach
   @daily_notes = DailyNote.new
   if @favorite.bride_id
-    redirect_to root_url, :alert =>"Only coaches can create, update, or delete 'Daily Notes'"
+    redirect_to root_url, :alert =>"Only coaches can create, update, or delete Daily Notes"
   end
 end
 
