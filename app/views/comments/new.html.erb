@@ -24,11 +24,8 @@
 
           <!-- Label and input for daily_note_id -->
           <div class="form-group">
-            <label for="daily_note_id" class="col-sm-2 control-label">
-              Daily note
-            </label>
             <div class="col-sm-10">
-              <input type="text" id="daily_note_id" name="daily_note_id" placeholder="Daily note" class="form-control" value="<%= @comment.daily_note_id %>">
+             <input type="hidden" name="daily_note_id" value="<%= @comment.daily_note_id %>">
             </div>
           </div>
 
